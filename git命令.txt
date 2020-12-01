@@ -1,0 +1,35 @@
+//设置git账户
+git config --global user.name "Your Name"		设置git账号（这里填github账号）
+git config --global user.email "email@example.com"		设置git邮箱（这里填github邮箱）
+git config user.name					查看git账号
+git config user.email					查看git邮箱
+
+//创建版本库
+mkdir learngit 					创建一个名叫learngit的空目录
+cd learngit 					把learngit设置为当前目录
+pwd 						查看当前目录
+git init						设置为git仓库
+
+//git文件操作
+git add readme.txt					把readme.txt文件添加到仓库临时区
+git commit -m "wrote a readme file" 			把文件提交到仓库，-m后面输入的是本次提交的说明
+git status 						查看仓库当前的状态
+git diff readme.txt					查看上次修改情况
+git log						查看历史版本记录
+git log --pretty=oneline
+git reset --hard HEAD^ //HEAD表示当前版本，则HEAD^表示上一个版本，那么上上版本就是HEAD^^，或commit id
+cat readme.txt 					查看 readme.txt 文件的内容
+git checkout -- readme.txt 				没有添加临时区前，把readme.txt文件在工作区的修改全部撤销。
+git reset HEAD readme.txt 				添加到临时区，但没有提交之前，退回工作区，再用git checkout -- readme.txt 
+rm test.txt						删除文件
+//从版本库删除文件
+git rm test.txt
+git commit -m "remove test.txt
+
+
+//github关联操作
+git remote add origin git@github.com:RFHzhj/learngit.git //“RFHzhj”是我的GitHub的账户名，你需要填写你自己的账户名
+git push -u origin master//将master分支库文件推送到远程库，第一次推送加-u
+
+
+
